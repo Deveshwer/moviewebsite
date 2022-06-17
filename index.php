@@ -1,3 +1,9 @@
+<?php
+session_start();
+    include("connection.php");
+    include("functions.php");
+    $user_data = check_login($con);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +28,7 @@
         <div class = "search-container">
             <div class = "search-element">
                 <h3 style="color:yellow;">SEARCH:</h3>
-                <input type = "text" class = "form-control" placeholder="Enter a movie name" id = "movie-search-box" onkeyup="findMovies()" onclick = "findMovies()" class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none">
+                <input type = "text" class = "form-control" placeholder="Enter a movie name" id = "movie-search-box" onkeyup="findMovies()" onclick = "findMovies()">
                 <div class = "search-list" id = "search-list">
                 </div>
             </div>
